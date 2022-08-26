@@ -1,0 +1,129 @@
+package beTheHeroAPItesting;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+
+public class BetheHero {
+	String userid;
+	Integer usecaseid1;
+	Integer usecaseid2;
+	Integer profileUseCaseID1;
+	@BeforeTest
+	public void baseUriutility() {
+		RestAssured.baseURI="http://192.168.3.230:3333";
+		//http://192.168.3.230:3333/ongs
+	}
+	@Test(priority=1)
+	public void RegisterRequest() {
+		String response =
+				given().log().ifValidationFails()
+				.headers("Content-Type", "application/json")
+				.body(RequestBodyUtils.postBody())
+		        .when().post("/ongs")
+		        .then()
+		        .log().ifValidationFails().assertThat()
+		        .statusCode(200)
+		        .extract().response().asString();
+		
+	     userid = JsonPathUtils.jsonPath(response, "id");
+		System.out.println(userid);
+		
+		
+	}
+	/*@Test(priority=2)
+	public void sessions() {
+		String name = given().log().all().body(RequestBodyUtils.login(id)).when().post("/sessions").then().log().all().assertThat()
+        .statusCode(200)
+        .extract().response().asString();
+		System.out.println(name);
+	}*/
+	
+	@Test(priority=3)
+	public void ApplicationDetails() {
+		String response =
+				given()
+		       .when().get("/ongs/"+userid+"")
+		       .then()
+		       .assertThat()
+		       .statusCode(200)
+		       .extract().response().asString();
+		System.out.println(response);
+	}
+	@Test(priority=4)
+	public void updateDetails() {
+		String response = 
+				 given()
+				.headers("Content-Type","application/json")
+				.body(RequestBodyUtils.updateBody()).auth().basic("id", userid)
+		        .when().put("/ongs/"+userid+"")
+		        .then()
+		        .assertThat().statusCode(200).extract().response().asString();
+		System.out.println(response);
+	}
+	@Test(priority=5)
+	public void registerNewRequest1() {
+		String response = 
+				given()
+				.headers("Content-Type", "application/json")
+				.body(RequestBodyUtils.registernewBody1())
+				.headers("authorization",userid)
+		        .when().post("/incidents")
+		        .then()
+		        .assertThat().statusCode(200).extract().response().asString();
+		      usecaseid1 = JsonPathUtils.jsonPathUseCase(response, "id");
+		// System.out.println(usecaseid1);
+		
+	  
+		
+		
+	}
+	@Test(priority=6)
+	public void registerNewRequest2() {
+		String response = 
+				given()
+				.headers("Content-Type", "application/json")
+				.body(RequestBodyUtils.registernewBody2())
+				.headers("authorization",userid)
+		        .when().post("/incidents")
+		        .then()
+		        .assertThat().statusCode(200).extract().response().asString();
+		  usecaseid2 = JsonPathUtils.jsonPathUseCase(response, "id");
+		 System.out.println(usecaseid2);
+	}
+	@Test(priority=7)
+	public void profileDetails() {
+		String response = 
+				given()
+				.header("authorization",userid)
+		        .when().get("/profile")
+		        .then()
+		        .log().all().assertThat()
+		        .statusCode(200).extract()
+		        .response().asString();
+		System.out.println(response);
+		 int profileUseCaseID1 = JsonPathUtils.profileJsonPath(response, 0, "id");
+		//System.out.println(profileUseCaseID);
+		//JsonPath jp=new JsonPath(response);
+		// profileUseCaseID1 = jp.getInt("id[0]");
+		System.out.println(profileUseCaseID1);
+		
+		
+		Assert.assertEquals(usecaseid1, profileUseCaseID1);
+	}
+	@Test(priority=8)
+	public void deleteUseCase() {
+		given().log().all().header("authorization",userid)
+        .when().delete("/incidents/"+""+usecaseid1+"").then().assertThat().statusCode(204);
+	}
+	
+	
+	
+	
+	
+	
+
+}

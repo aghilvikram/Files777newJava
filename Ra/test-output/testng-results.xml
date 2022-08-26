@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5858" started-at="2022-08-24T14:10:03 IST" finished-at="2022-08-24T14:10:09 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5858" started-at="2022-08-24T14:10:03 IST" finished-at="2022-08-24T14:10:09 IST">
+      <class name="beTheHeroAPItesting.BetheHero">
+        <test-method status="PASS" signature="baseUriutility()[pri:0, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="baseUriutility" is-config="true" duration-ms="1347" started-at="2022-08-24T14:10:03 IST" finished-at="2022-08-24T14:10:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseUriutility -->
+        <test-method status="PASS" signature="RegisterRequest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="RegisterRequest" duration-ms="1377" started-at="2022-08-24T14:10:05 IST" data-provider="PostData" finished-at="2022-08-24T14:10:07 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[vikramaghil]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[vikramaghil777@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6380455178]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[salem]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[59]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterRequest -->
+        <test-method status="PASS" signature="ApplicationDetails()[pri:3, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="ApplicationDetails" duration-ms="492" started-at="2022-08-24T14:10:07 IST" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest" finished-at="2022-08-24T14:10:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ApplicationDetails -->
+        <test-method status="PASS" signature="updateDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="updateDetails" duration-ms="313" started-at="2022-08-24T14:10:07 IST" data-provider="updateData" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest" finished-at="2022-08-24T14:10:08 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[deviaghil]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[deviaghil@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[6380455178]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[tanjore]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[95]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateDetails -->
+        <test-method status="PASS" signature="registerNewRequest1(java.lang.String,java.lang.String,java.lang.String)[pri:5, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="registerNewRequest1" duration-ms="299" started-at="2022-08-24T14:10:08 IST" data-provider="postCaseData" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest, beTheHeroAPItesting.BetheHero.updateDetails" finished-at="2022-08-24T14:10:08 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FastForward]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Book]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerNewRequest1 -->
+        <test-method status="PASS" signature="registerNewRequest2(java.lang.String,java.lang.String,java.lang.String)[pri:6, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="registerNewRequest2" duration-ms="331" started-at="2022-08-24T14:10:08 IST" data-provider="updateCaseData" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest, beTheHeroAPItesting.BetheHero.updateDetails" finished-at="2022-08-24T14:10:08 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[NewLook]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Tale]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2500]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerNewRequest2 -->
+        <test-method status="PASS" signature="profileDetails()[pri:7, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="profileDetails" duration-ms="272" started-at="2022-08-24T14:10:08 IST" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest" finished-at="2022-08-24T14:10:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profileDetails -->
+        <test-method status="PASS" signature="deleteUseCase()[pri:8, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="deleteUseCase" duration-ms="255" started-at="2022-08-24T14:10:09 IST" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest" finished-at="2022-08-24T14:10:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUseCase -->
+        <test-method status="PASS" signature="updatedProfileDetails()[pri:9, instance:beTheHeroAPItesting.BetheHero@491cc5c9]" name="updatedProfileDetails" duration-ms="331" started-at="2022-08-24T14:10:09 IST" depends-on-methods="beTheHeroAPItesting.BetheHero.RegisterRequest, beTheHeroAPItesting.BetheHero.deleteUseCase" finished-at="2022-08-24T14:10:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatedProfileDetails -->
+      </class> <!-- beTheHeroAPItesting.BetheHero -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

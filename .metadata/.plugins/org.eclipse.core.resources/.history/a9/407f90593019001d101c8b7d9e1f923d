@@ -1,0 +1,15 @@
+package beTheHeroAPItesting;
+
+public class RequestBodyUtils {
+	
+	public static String postBody() {
+		return "{\r\n" + 
+				"    \"name\":\"vikram\",\r\n" + 
+				"    \"email\":\"vikramaghil@gmail.com\",\r\n" + 
+				"    \"whatsapp\":\"6380455178\",\r\n" + 
+				"    \"city\":\"Salem\",\r\n" + 
+				"    \"uf\":\"12\"\r\n" + 
+				"}";
+	}
+
+}

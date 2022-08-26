@@ -1,0 +1,17 @@
+package beTheHeroAPItesting;
+
+import io.restassured.path.json.JsonPath;
+
+public class JsonPathUtils {
+	
+	public static String jsonPath(String response,String key) {
+		JsonPath jp=new JsonPath(response);
+			String id = jp.getString(key);
+			
+			return id;
+			
+			
+		
+	
+
+}}

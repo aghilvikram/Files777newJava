@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Default test" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="Default test" time="4.633">
+    <testcase name="RegisterRequest" classname="beTheHeroAPItesting.NegativeTestCases" time="1.277"/>
+    <testcase name="RegisterRequestp" classname="beTheHeroAPItesting.NegativeTestCases" time="0.71"/>
+    <testcase name="updateDetails" classname="beTheHeroAPItesting.NegativeTestCases" time="0.322"/>
+    <testcase name="ApplicationDetails" classname="beTheHeroAPItesting.NegativeTestCases" time="0.359"/>
+    <testcase name="registerNewRequest1" classname="beTheHeroAPItesting.NegativeTestCases" time="0.625"/>
+    <testcase name="registerNewRequest2" classname="beTheHeroAPItesting.NegativeTestCases" time="0.376"/>
+    <testcase name="profileDetails" classname="beTheHeroAPItesting.NegativeTestCases" time="0.322"/>
+    <testcase name="deleteUseCase" classname="beTheHeroAPItesting.NegativeTestCases" time="0.315"/>
+  </testsuite>
+</testrun>

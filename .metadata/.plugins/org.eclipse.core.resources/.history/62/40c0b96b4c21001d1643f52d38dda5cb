@@ -1,0 +1,137 @@
+package beTheHeroAPItesting;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+public  class DataBaseClass {
+	
+	
+	static String url="jdbc:mysql://192.168.3.230:3306/be_the_hero";
+	static String username="root";
+	static String password="root";
+	static Connection con;
+	
+	
+	public DataBaseClass() throws Exception{
+	//Class.forName("com.mysql.jdbc.Driver");
+	con=DriverManager.getConnection(url,username,password);
+    
+	}
+	
+    
+	public static void getUserDetails(String querry) throws Exception {
+		List<Object> ls=new ArrayList<Object>();
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+		while(rs.next()) {
+			
+			
+			int id = rs.getInt(1);
+			String name = rs.getString(2);
+			String email = rs.getString(3);
+			String whatsapp = rs.getString(4);
+			String city = rs.getString(5);
+			String code = rs.getString(6);
+			Map<String ,Object> mp=new LinkedHashMap<String,Object>();
+			mp.put("id", id);
+			mp.put("name", name);
+			mp.put("email", email);
+			mp.put("whatsapp", whatsapp);
+			mp.put("city", city);
+			mp.put("code", code);
+			
+			
+			//System.out.println(mp);
+			String json = new ObjectMapper().writeValueAsString(mp);
+			System.out.println(json);
+		
+			/*
+			ls.add(name);
+			ls.add(email);
+			ls.add(whatsapp);
+			ls.add(city);
+			ls.add(code);
+			JsonObject jb=new JsonObject();*/
+			
+		}
+		
+		//int size = ls.size();
+		//System.out.println("no of rows: "+size);
+		//System.out.println(ls);
+		//System.out.println(mp);
+		//return mp;
+		
+		
+	}
+	
+	
+	public static int getId(String querry) throws Exception {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+		int id = rs.getInt(1);
+		return id;
+	}
+	public static String getName(String querry) throws Exception {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+	    rs.next();
+		String name= rs.getString(1);
+		System.out.println(name);
+		return name;
+	}	
+	public static String getEmail(String querry) throws Exception {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+		rs.next();
+		String email= rs.getString(2);
+		System.out.println(email);
+		return email;
+	}
+	public static String getWhatsapp(String querry) throws Exception {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+		String whatsapp= rs.getString(3);
+		System.out.println(whatsapp);
+		return whatsapp;
+	}
+	public static String getCity(String querry) throws Exception {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+		String city= rs.getString(4);
+		System.out.println(city);
+		return city;
+	}
+	public static String getCode(String querry) throws Exception {
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(querry);
+		String code= rs.getString(5);
+		System.out.println(code);
+		return code;
+	}
+	public static void main(String[] args) throws Exception {
+		DataBaseClass db=new DataBaseClass();
+		//getName("select name from users where id=3126");
+		getCity("select city from users where name='vikramb'");
+		//getUserDetails("select * from users where id=3126");
+		
+	}
+	
+	
+
+}

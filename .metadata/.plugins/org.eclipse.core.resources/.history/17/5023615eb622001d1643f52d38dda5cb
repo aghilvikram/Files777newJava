@@ -1,0 +1,40 @@
+package programs;
+
+import java.util.Scanner;
+
+public class PatternProgram {
+	
+	public static void m1() {
+		int row,column;
+		int startingno=1;
+		/*Scanner sc= new Scanner(System.in);
+		int nooflines=sc.nextInt();*/
+		for(row=1; row<=6; row++) {
+			for(column=1; column<=startingno; column++) {
+				System.out.print(startingno+" ");
+				startingno++;
+			}
+			startingno++;
+			System.out.println();
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		/*Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the no of lines: ");
+		int nooflines=sc.nextInt();
+		int value=1;
+		int row,column=0;
+		for(row=0; row<=nooflines-1; row++) {
+			for(column=0; column<=row; column++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}*/
+		m1();
+		
+
+	}
+
+}

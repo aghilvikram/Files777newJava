@@ -1,0 +1,45 @@
+package beTheHeroAPItesting;
+
+public class RequestBodyUtilsNegativeCaseDatas {
+	
+	public static String postBody() {
+		return "{\r\n" + 
+				"    \"name\":\"vikram\",\r\n" + 
+				"    \"email\":\"vikramaghil@gmail.com\",\r\n" + 
+				"    \"whatsapp\":\"6380455178\",\r\n" + 
+				"    \"city\":\"Salem\",\r\n" + 
+				"    \"uf\":\"12\"\r\n" + 
+				"}";
+	}
+	
+	public static String updateBody() {
+		return "{\r\n" + 
+				"    \"name\":\"VIKRAM\",\r\n" + 
+				"    \"email\":\"vikramaghil@gmail.com\",\r\n" + 
+				"    \"whatsapp\":\"6380455178\",\r\n" + 
+				"    \"city\":\"SALEM\",\r\n" + 
+				"    \"uf\":\"12\"\r\n" + 
+				"}";
+	}
+	public static String registernewBody1() {
+		return "{\r\n" + 
+				"   \"title\":\"book\",\r\n" + 
+				"   \"description\":\"bookapitesting\",\r\n" + 
+				"   \"value\":\"1000\" \r\n" + 
+				"}";
+	}
+	public static String registernewBody2() {
+		return "{\r\n" + 
+				"   \"title\":\"novel\",\r\n" + 
+				"   \"description\":\"novelapitesting\",\r\n" + 
+				"   \"value\":\"2000\" \r\n" + 
+				"}";
+	}
+	
+	public static String login(String value) {
+		return "{\r\n" + 
+				"   \"id\": \""+value+"\"\r\n" + 
+				"}";
+	}
+
+}

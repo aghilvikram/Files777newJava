@@ -1,0 +1,12 @@
+package programs;
+
+public class ReverseWordsInSentence {
+
+	public static void main(String[] args) {
+		String given="I Love India";
+		String[] temp = given.split(" ");
+		System.out.println(temp.length);
+
+	}
+
+}

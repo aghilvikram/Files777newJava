@@ -1,0 +1,12 @@
+package javapac;
+
+public class CountingnoofCharacters {
+
+	public static void main(String[] args) {
+		String str="vikramaghil";
+		int n = str.length();
+		System.out.println(n);
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package programs;
+
+public class StringReversal {
+	public void m1() {
+		String given="vikram";
+		StringBuffer buffer=new StringBuffer();
+		buffer.append(given);
+		buffer.reverse();
+		System.out.println(buffer);
+	}
+
+	public static void main(String[] args) {
+		String str="vikram";
+		String rev="";
+		char[] charArray = str.toCharArray();
+		for(int i=charArray.length-1; i>=0; i--) {
+			rev=rev+charArray[i];
+			
+		}
+		System.out.println(rev);
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package beTheHeroAPItesting;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import io.restassured.RestAssured;
+
+public class BetheHero {
+	@BeforeTest
+	public void baseUriutility() {
+		RestAssured.baseURI="http://192.168.3.230";
+		//http://192.168.3.230:3333/ongs
+	}
+	@Test
+	public void RegisterRequest() {
+		given().log().all().headers("Content-Type", "application/json")
+		.when().post(":3333/ongs")
+		.then()
+		.log().all().assertThat().statusCode(200);
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+package basicsAPI;
+
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+
+import static io.restassured.RestAssured.*;
+
+public class Basics {
+
+	public static void main(String[] args) {
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		String response = given().log().all().queryParam("key", "qaclick123").header("Content-Type","application/json").body("")
+		.when().post("maps/api/place/add/json").then().log().all().assertThat().statusCode(200).extract().response().asString();
+	
+	   System.out.println(response);
+	   JsonPath jp=new JsonPath(response);
+	    jp.getString("Content-Type");
+	
+	
+	}
+
+}

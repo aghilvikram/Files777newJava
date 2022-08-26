@@ -1,0 +1,29 @@
+package beTheHeroAPItesting;
+
+import io.restassured.path.json.JsonPath;
+
+public class JsonPathUtils {
+	
+	public static String jsonPath(String response,String key) {
+		JsonPath jp=new JsonPath(response);
+			String id = jp.getString(key);
+			
+			return id;
+			
+			
+		
+	
+
+}
+	public static Object profileJsonPath(String response,int i,String key) {
+		JsonPath jp= new JsonPath(response);
+			//Object id = jp(i).get(key);
+		Object id =[i] jp.get(key);
+			
+			return id;
+			
+			
+		
+	
+
+}}
